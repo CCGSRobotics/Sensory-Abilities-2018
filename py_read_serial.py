@@ -10,7 +10,7 @@ def readPins():
         sensor_value is the analog value read from the sensor. '''
     sensor_num = string[0]
     sensor_value = ''
-
+****************-
     ''' This loop goes though each character of "string"
         and retrives the analog value from the string '''
     for x in range(1,len(string)):
