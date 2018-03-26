@@ -1,9 +1,34 @@
+#include <SoftwareSerial.h>
+SoftwareSerial mySerial(10, 11); // RX, TX
+unsigned char hexdata[9] = {0xFF,0x01,0x86,0x00,0x00,0x00,0x00,0x00,0x79};
+char CO2 = true;
+
 // This is the functions that reads the pin's values, 
 // and outputs the pin number and analog value from the sensor.
 void readPin(int pin){
   Serial.print(pin); 
   Serial.println(analogRead(pin));
 }
+void readCO2() {} {
+    for(int i=0,j=0;i<9;i++)  {
+      if (mySerial.available()>0) {
+        long hi,lo,CO2;
+        int ch=mySerial.read();
+    
+        if(i==2){
+          hi=ch; //High concentration
+        }   
+        if(i==3){
+          lo=ch;   
+        }   //Low concentration
+        if(i==8) {
+          CO2=hi*256+lo;  //CO2 concentration
+          Serial.print("0");
+          Serial.println(CO2);
+        }
+      }
+    }
+  }
 // The setup of the Serial communication, on channel 9600.
 void setup(){
   Serial.begin(9600);
@@ -12,11 +37,12 @@ void setup(){
 void loop(){
   // This 'for' loop is used to see what pins are recieving a analog signal. 
   // If they are, they will output this signal to the serial communication with the "readPin(x)" function.
-  for(int i = 0; i <= 7; i++) {
+  for(int i = 1; i <= 7; i++) {
     if(analogRead(i) != 'None') {
       readPin(i);
     }
   }
+  if(CO2 == true) {readCO2();}
   // A delay of 500 milliseconds (0.5 seconds) is used to stop python from reading the values too quickly. 
   // Change to 250 milliseconds if absolutely neccessary.
   delay(500);
