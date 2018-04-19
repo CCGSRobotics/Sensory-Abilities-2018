@@ -2,7 +2,7 @@
 SoftwareSerial co2Serial(10, 11); // RX, TX
 unsigned char hexdata[9] = {0xFF,0x01,0x86,0x00,0x00,0x00,0x00,0x00,0x79};
 char CO2 = true;
-char temperature = false;
+char temperature = true;
 
 // This is the functions that reads the pin's values, 
 // and outputs the pin number and analog value from the sensor.
@@ -40,7 +40,7 @@ void setup(){
 // This is the code that repeats every 0.5 seconds.
 void loop(){
   // They will output this signal to the serial communication with the "readPin(x)" function.
-  if(temperature == true) {readPin(2);}
+  if(temperature == true) {readPin(1);}
   if(CO2 == true) {readCO2();}
 
   // A delay of 500 milliseconds (0.5 seconds) is used to stop python from reading the values too quickly. 
