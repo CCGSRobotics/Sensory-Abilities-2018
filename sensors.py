@@ -1,22 +1,29 @@
 from py_read_serial import *
 import sys
 import time
+import os
+
 '''
 Put all the sensor names in this list here, and plug them in accordingly.
 Make sure they are plugged in correctly, otherwise your data will be wrong.
 '''
-sys.stdout.write("cls")
 
+messages = {
+    0: ["The CO2 Content of the surrounding environment is", "ppm (parts per million)."],
+    1: ["The current temperature is", "*C."]
+}
+numOfSensors = len(messages)
+os.system('clear')
 while 1:
-    sys.stdout.write("\033[F")
-    sys.stdout.write("\033[F")
-    for x in range(2):
-        sensor = readPins()
-        if sensor['num'] == 0:
-            print('The CO2 Content of the surrounding environment is',sensor['value'],'ppm (parts per million)')
+    for x in range(numOfSensors  ):
+        while 1:
+            try:
+                sensor = readPins() # sensor = {'num': sensorID, 'value': some number}
+                break
+            except:
+                pass
         if sensor['num'] == 1:
-            temp = round((57*(sensor['value']-20))/100)
-            print('The current temperature is',temp,'*C')
-        sys.stdout.write("\033[K")
+            sensor['value'] = round((57*(sensor['value']-20))/100,1)
+        print(messages[sensor['num']][0], sensor['value'], messages[sensor['num']][1])
     time.sleep(0.5)
-    
+    os.system('clear')
