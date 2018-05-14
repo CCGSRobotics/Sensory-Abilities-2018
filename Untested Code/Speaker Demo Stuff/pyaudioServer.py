@@ -6,7 +6,7 @@ from constants import *
 player = AudioPlayer(CHUNK_SIZE, WIDTH, RATE, CHANNELS)
 
 s = socket.socket()
-s.bind((HOST,PORT))
+s.bind(("",PORT))
 
 s.listen(1)
 client, address = s.accept()
