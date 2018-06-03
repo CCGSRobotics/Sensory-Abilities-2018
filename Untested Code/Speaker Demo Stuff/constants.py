@@ -2,11 +2,11 @@
 import pyaudio
 
 RATE = 48000
-CHANNELS = 1
+CHANNELS = 1 # The pi microphone unfortunately has only one channel.
 CHUNK_SIZE = 1024
-WIDTH = pyaudio.paInt32
+WIDTH = pyaudio.paInt32 # If the interpreter cannot recognice what this constant is, then you have the wrong version of pyaudio.
 
-HOST = "127.0.0.1"
+HOST = "127.0.0.1" # Use this host if you are just relaying between two terminals on the same device.
 PORT = 12024
 
 class AudioPlayer:
@@ -31,10 +31,6 @@ class AudioPlayer:
     def play(self):
         """ Play entire BYTE STRING """
         self.stream.write(self.audioData)
-        #print(len(self.audioData), end = "\n--------------------------\n")
-        #for i in range(0,len(self.audioData),len(self.audioData)//self.chunksize):
-            #print(self.audioData[i:i + (len(self.audioData)//self.chunksize)])
-        #    self.stream.write(self.audioData[i:i + (len(self.audioData)//self.chunksize)])
 
     def close(self):
         """ Graceful shutdown """ 
