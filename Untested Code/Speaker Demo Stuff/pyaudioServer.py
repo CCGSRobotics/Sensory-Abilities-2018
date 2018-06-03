@@ -2,6 +2,7 @@
 
 import pyaudio, time, socket
 from constants import *
+from audioplayer import *
 
 player = AudioPlayer(CHUNK_SIZE, WIDTH, RATE, CHANNELS)
 
