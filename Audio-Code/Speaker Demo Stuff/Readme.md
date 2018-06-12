@@ -33,7 +33,7 @@ At this point, your microphone is ready to go!
 
 At this point, you are all good to go!
 
-## Known issues and practical solutions
+## Known issues and Practical Solutions
 1. The audio output is garbled (extremely unclear):
 	- This is most likely because the internet connection between the client and the server is poor.
 	- It is also possible that the microphone is spoilt or broken. In which needs to be checked with code that is not reliant on internt.
@@ -50,8 +50,11 @@ At this point, you are all good to go!
 
 ## How the code is constructed
 **Server Code** - *audioServer.py*
+
+The server code uses TCP sockets - this ensures that the audio is always sent without problems and if there are problems, it will keep trying to send the data until it succeed.
 **Client Code** - *audioClient.py*
+
 **Constants** - *constants.py*
-**Audio Class**
-****
+
+**Audio Class** - *audioPlayer.py*
 
