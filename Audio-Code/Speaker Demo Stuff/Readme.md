@@ -23,10 +23,10 @@ Currently, this code has been written in a basic, low level manner and is consid
 At this point, your microphone is ready to go!
 
 **How to start the Pyaudio Server**
-1. On the server side of the potential connection, run the code that is named "audioserver.py". The code should not output anything.
+1. On the server side of the potential connection, run the code that is named "audioServer.py". The code should not output anything.
 	- If the code complains about anything to do with ALSA, please ignore them.
 	- As long as the code has not crashed, then everything is working correctly.
-2. On the client side of the potential connection, run the code that is named "audioclient.py". The code should not output anything.
+2. On the client side of the potential connection, run the code that is named "audioClient.py". The code should not output anything.
 	- Please input the IP address of the server when asked.
 	- If the code complains about anything to do with ALSA, please ignore them.
 	- As long as the code has not crashed, then everything is working correctly.
@@ -43,4 +43,15 @@ At this point, you are all good to go!
 	- Turn the volume up on your laptop or desktop.
 	- Earphones/Headphones may be an issue
 	- Ensure that the USB microphone is properly configured on the pi (refer to the user guide at **Setting up the Microphone**)
+	- Try to bend the USB (not too hard of course). If you can easily bend it, then it's 200% broken.
+	- The code has some overlooked bugs which MUST BE REPORTED IMMEDIATELY.
+3. There is no audio output:
+	- Ensure that you have followed the steps regarding **Setting up the Microphone** and **How to start the Pyaudio Server** in the user guide.
+
+## How the code is constructed
+**Server Code** - *audioServer.py*
+**Client Code** - *audioClient.py*
+**Constants** - *constants.py*
+**Audio Class**
+****
 
