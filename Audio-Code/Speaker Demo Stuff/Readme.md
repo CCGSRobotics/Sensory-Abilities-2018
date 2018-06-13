@@ -1,5 +1,5 @@
 # Speaker Code
-**Last updated on 12/6/2018**
+**Last updated on 13/6/2018**
 
 Welcome to the King's Legacy 2018 Speaker Code - an implementation of Python 3's pyaudio module using sockets and a callback function to ensure a smooth and clear transfer of live audio from one device to another.
 
@@ -23,10 +23,10 @@ Currently, this code has been written in a basic, low level manner and is consid
 At this point, your microphone is ready to go!
 
 **How to start the Pyaudio Server**
-1. On the server side of the potential connection, run the code that is named "audioServer.py". The code should not output anything.
+1. On the server side of the potential connection (i.e: The side which will receive the audio from the client), run the code that is named "audioServer.py". The code should not output anything.
 	- If the code complains about anything to do with ALSA, please ignore them.
 	- As long as the code has not crashed, then everything is working correctly.
-2. On the client side of the potential connection, run the code that is named "audioClient.py". The code should not output anything.
+2. On the client side of the potential connection (i.e: The side which will send direct audio input to the server), run the code that is named "audioClient.py". The code should not output anything.
 	- Please input the IP address of the server when asked.
 	- If the code complains about anything to do with ALSA, please ignore them.
 	- As long as the code has not crashed, then everything is working correctly.
@@ -51,7 +51,7 @@ At this point, you are all good to go!
 ## How the code is constructed
 **Server Code** - *audioServer.py*
 
-The server code uses TCP sockets - this ensures that the audio is always sent without problems and if there are problems, it will keep trying to send the data until it succeed.
+The server code uses TCP sockets - this ensures that the audio is always sent without problems and if there are problems, it will keep trying to send the data until it succeeds.
 **Client Code** - *audioClient.py*
 
 **Constants** - *constants.py*
