@@ -2,7 +2,7 @@ from py_read_serial import *
 import sys
 import time
 import os
-
+py
 '''
 Put all the sensor names in this list here, and plug them in accordingly.
 Make sure they are plugged in correctly, otherwise your data will be wrong.
