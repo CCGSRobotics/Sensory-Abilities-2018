@@ -22,8 +22,6 @@ while 1:
                 break
             except:
                 pass
-        if sensor['num'] == 1:
-            sensor['value'] = round((57*(sensor['value']-20))/100,1)
         print(messages[sensor['num']][0], sensor['value'], messages[sensor['num']][1])
     time.sleep(0.5)
     os.system('clear')
