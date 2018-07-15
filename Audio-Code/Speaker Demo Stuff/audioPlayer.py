@@ -1,3 +1,4 @@
+# Audio Player Class
 import pyaudio
 class AudioPlayer:
     """ Plays a single chunk of audio data """ 
