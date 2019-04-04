@@ -14,3 +14,5 @@
 
 > Needed: tensorflow, numpy, scipy, opencv-python, pillow, matplotlib, h5py, keras. See [Github of ImageAI Dependencies](https://github.com/OlafenwaMoses/ImageAI/blob/master/README.md#dependencies).
 
+> Also worth checking this out: https://github.com/ultralytics/yolov3/wiki/Train-Custom-Data for training a custom YOLOv3 model.
+
