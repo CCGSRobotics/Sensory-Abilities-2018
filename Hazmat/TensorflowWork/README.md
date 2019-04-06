@@ -16,3 +16,5 @@
 
 > Also worth checking this out: https://github.com/ultralytics/yolov3/wiki/Train-Custom-Data for training a custom YOLOv3 model.
 
+> To install PyTorch on NVIDIA Jetson Nano: https://devtalk.nvidia.com/default/topic/1049071/pytorch-for-jetson-nano/.
+
